@@ -578,12 +578,9 @@
     /* ─── Tablet: ≤ 900px ──────────────────────────────────── */
     @media (max-width: 900px) {
 
-      /* Nav */
       nav { padding: 1.2rem 2rem; }
-
       .nav-links { gap: 1.5rem; }
 
-      /* Story */
       .story {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -592,12 +589,9 @@
 
       .story-pull { padding-top: 0; }
 
-      /* Services */
       .services-grid { grid-template-columns: 1fr; }
-
       .service-panel { padding: 4rem 3rem; }
 
-      /* About */
       .about {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -606,21 +600,18 @@
 
       .about-label { padding-top: 0; }
 
-      /* Contact */
       .contact {
         grid-template-columns: 1fr;
         gap: 3rem;
         padding: 5rem 3rem;
       }
 
-      /* Footer */
       footer { padding: 2rem 3rem; }
     }
 
     /* ─── Mobile: ≤ 600px ──────────────────────────────────── */
     @media (max-width: 600px) {
 
-      /* Nav — hamburger */
       nav { padding: 1.1rem 1.4rem; }
 
       .nav-toggle { display: flex; }
@@ -651,10 +642,8 @@
       }
 
       nav.scrolled .nav-links a { color: var(--cream) !important; }
-
       .nav-links a:hover { color: var(--gold-light) !important; }
 
-      /* Nav logo — always visible above overlay */
       .nav-logo {
         position: relative;
         z-index: 101;
@@ -663,26 +652,17 @@
       }
 
       nav.open .nav-logo { color: var(--cream) !important; }
-
       .nav-toggle { z-index: 101; }
-
       nav.open .nav-toggle span { background: var(--cream); }
 
-      /* Hero */
       .hero { min-height: 100svh; }
-
       .hero-text { padding: 1.5rem 1.8rem; }
-
       .hero-headline { font-size: clamp(2.6rem, 10vw, 4rem); }
-
       .hero-sub { font-size: 0.95rem; margin-bottom: 2rem; }
-
       .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.25em; }
-
       .hero-eyebrow::before,
       .hero-eyebrow::after { width: 20px; }
 
-      /* Tagline band */
       .tagline-band {
         padding: 1.6rem 1.5rem;
         gap: 1rem;
@@ -691,14 +671,12 @@
 
       .tagline-band span { display: none; }
 
-      /* Story */
       .story {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         padding: 5rem 1.5rem 4rem;
       }
 
-      /* Services header */
       .services-section { padding: 4rem 0 5rem; }
 
       .services-header {
@@ -708,14 +686,12 @@
 
       .service-panel { padding: 3rem 1.5rem; }
 
-      /* About */
       .about {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 4rem 1.5rem;
       }
 
-      /* Contact */
       .contact {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -727,7 +703,6 @@
       .contact-form input,
       .contact-form textarea,
       .contact-form select {
-        /* Prevent iOS zoom on focus (font-size must be ≥ 16px) */
         font-size: 1rem;
         padding: 0.85rem 1rem;
       }
@@ -741,7 +716,6 @@
         font-size: 0.75rem;
       }
 
-      /* Footer */
       footer {
         flex-direction: column;
         gap: 0.8rem;
@@ -749,7 +723,6 @@
         padding: 2rem 1.5rem;
       }
 
-      /* Touch-friendly tap targets */
       .btn { padding: 1rem 2rem; font-size: 0.72rem; }
     }
 
@@ -768,7 +741,6 @@
   <!-- NAV -->
   <nav id="mainNav">
     <div class="nav-logo">Full Belly Advisors</div>
-    <!-- Hamburger toggle (mobile only) -->
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
       <span></span>
@@ -819,7 +791,7 @@
         Full Belly Advisors was born from the belief that philanthropy should feel this way—for everyone at the table.
       </p>
       <p>
-        In the nonprofit sector, leaders are often conditioned to operate from a place of "just enough." We work with organizations to move beyond that cycle, bringing strategic clarity, strong storytelling, and practical tools that empower leaders to confidently ask for what they need. 
+        In the nonprofit sector, leaders are often conditioned to operate from a place of "just enough." We work with organizations to move beyond that cycle, bringing strategic clarity, strong storytelling, and practical tools that empower leaders to confidently ask for what they need.
       </p>
       <p>
         For philanthropists, giving can too often feel transactional—reduced to checks written rather than purpose realized. Having the capacity to give does not always make it clear how to give well. At Full Belly, we partner with individuals and families to create a roadmap for their philanthropy—aligning values with strategy, removing operational roadblocks, and freeing philanthropists to focus on what matters most: giving that feels impactful and soul-filling.
@@ -967,7 +939,6 @@
       navToggle.classList.toggle('open', isOpen);
       nav.classList.toggle('open', isOpen);
       navToggle.setAttribute('aria-expanded', isOpen);
-      // Prevent body scroll when menu is open
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
