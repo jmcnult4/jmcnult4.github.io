@@ -455,3 +455,515 @@
       font-weight: 300;
       font-size: clamp(2.2rem, 3vw, 3.5rem);
       color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-left p {
+      color: rgba(245,241,232,0.62);
+      font-size: 0.95rem;
+      max-width: 380px;
+      line-height: 1.85;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      background: rgba(245,241,232,0.07);
+      border: 1px solid rgba(200,213,201,0.22);
+      color: var(--cream);
+      padding: 0.9rem 1.2rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(245,241,232,0.32); }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--sage); }
+
+    .contact-form textarea { height: 120px; resize: none; }
+
+    .contact-form select {
+      appearance: none;
+      cursor: pointer;
+      color: rgba(245,241,232,0.45);
+    }
+
+    .contact-form select option { background: var(--sage-dark); color: var(--cream); }
+
+    .btn-submit {
+      background: var(--sage);
+      color: var(--cream);
+      border: none;
+      padding: 1rem 2.5rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      align-self: flex-start;
+    }
+
+    .btn-submit:hover { background: var(--sage-mid); transform: translateY(-1px); }
+
+    /* ─── FOOTER ────────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      padding: 2.5rem 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer .logo-foot {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mist);
+    }
+
+    footer .copy {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: rgba(200, 213, 201, 0.35);
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── SCROLL LINE ───────────────────────────────────────── */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: var(--sage);
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE STYLES
+    ═══════════════════════════════════════════════════════════ */
+
+    /* ─── Tablet: ≤ 900px ──────────────────────────────────── */
+    @media (max-width: 900px) {
+
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { gap: 1.5rem; }
+
+      .story {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 7rem 3rem 5rem;
+      }
+
+      .story-pull { padding-top: 0; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .service-panel { padding: 4rem 3rem; }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 5rem 3rem;
+      }
+
+      .about-label { padding-top: 0; }
+
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 5rem 3rem;
+      }
+
+      footer { padding: 2rem 3rem; }
+    }
+
+    /* ─── Mobile: ≤ 600px ──────────────────────────────────── */
+    @media (max-width: 600px) {
+
+      nav { padding: 1.1rem 1.4rem; }
+
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--sage-deep);
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li { width: 100%; text-align: center; }
+
+      .nav-links a {
+        display: block;
+        padding: 1.2rem 2rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.25em;
+        color: var(--cream) !important;
+        border-bottom: 1px solid rgba(200,213,201,0.1);
+      }
+
+      nav.scrolled .nav-links a { color: var(--cream) !important; }
+      .nav-links a:hover { color: var(--gold-light) !important; }
+
+      .nav-logo {
+        position: relative;
+        z-index: 101;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+      }
+
+      nav.open .nav-logo { color: var(--cream) !important; }
+      .nav-toggle { z-index: 101; }
+      nav.open .nav-toggle span { background: var(--cream); }
+
+      .hero { min-height: 100svh; }
+      .hero-text { padding: 1.5rem 1.8rem; }
+      .hero-headline { font-size: clamp(2.6rem, 10vw, 4rem); }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 2rem; }
+      .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.25em; }
+      .hero-eyebrow::before,
+      .hero-eyebrow::after { width: 20px; }
+
+      .tagline-band {
+        padding: 1.6rem 1.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .tagline-band span { display: none; }
+
+      .story {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 5rem 1.5rem 4rem;
+      }
+
+      .services-section { padding: 4rem 0 5rem; }
+
+      .services-header {
+        padding: 0 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .service-panel { padding: 3rem 1.5rem; }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 4rem 1.5rem;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 4rem 1.5rem;
+      }
+
+      .form-row { grid-template-columns: 1fr; gap: 1.2rem; }
+
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form select {
+        font-size: 1rem;
+        padding: 0.85rem 1rem;
+      }
+
+      .contact-form textarea { height: 140px; }
+
+      .btn-submit {
+        width: 100%;
+        text-align: center;
+        padding: 1.1rem 2rem;
+        font-size: 0.75rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+
+      .btn { padding: 1rem 2rem; font-size: 0.72rem; }
+    }
+
+    /* ─── Very small screens: ≤ 380px ─────────────────────── */
+    @media (max-width: 380px) {
+      .hero-headline { font-size: clamp(2.2rem, 9vw, 3rem); }
+      .story, .about, .contact { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .service-panel { padding: 2.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollBar"></div>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <div class="nav-logo">Full Belly Advisors</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#story" class="nav-link">About</a></li>
+      <li><a href="#nonprofits" class="nav-link">For Nonprofits</a></li>
+      <li><a href="#philanthropists" class="nav-link">For Philanthropists</a></li>
+      <li><a href="#about" class="nav-link">Julie McNulty</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img
+      src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/NautilusCutawayLogarithmicSpiral.jpg&amp;width=1200"
+      alt="Cross-sectioned nautilus shell showing logarithmic spiral chambers"
+    />
+    <div class="hero-text">
+      <p class="hero-eyebrow">Fundraising &amp; Philanthropic Advising</p>
+      <h1 class="hero-headline">
+        We help good people<br><em>give well.</em>
+      </h1>
+      <p class="hero-sub">
+        Partnering with philanthropists and mission-driven organizations to move resources with clarity, integrity, and purpose.
+      </p>
+      <a href="#contact" class="btn">Begin the Conversation</a>
+    </div>
+  </section>
+
+  <!-- TAGLINE BAND -->
+  <div class="tagline-band">
+    <p>Enough changes everything.</p>
+    <span>Full Belly Advisors</span>
+  </div>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="story-content reveal">
+      <div class="section-label">The Full Belly Story</div>
+      <h2>Enough Changes Everything.</h2>
+      <p>
+        A full belly is about more than physical nourishment—it's about the sense of ease and contentment that comes from knowing there is enough. To fill someone's belly is a profound act of care. It says: <em>I see you. You matter.</em>
+      </p>
+      <p>
+        Full Belly Advisors was born from the belief that philanthropy should feel this way—for everyone at the table.
+      </p>
+      <p>
+        In the nonprofit sector, leaders are often conditioned to operate from a place of "just enough." We work with organizations to move beyond that cycle, bringing strategic clarity, strong storytelling, and practical tools that empower leaders to confidently ask for what they need.
+      </p>
+      <p>
+        For philanthropists, giving can too often feel transactional—reduced to checks written rather than purpose realized. Having the capacity to give does not always make it clear how to give well. At Full Belly, we partner with individuals and families to create a roadmap for their philanthropy—aligning values with strategy, removing operational roadblocks, and freeing philanthropists to focus on what matters most: giving that feels impactful and soul-filling.
+      </p>
+    </div>
+
+    <div class="story-pull reveal">
+      <div class="pull-quote">
+        "Full belly, happy heart."
+      </div>
+      <div class="pull-attr">— Spanish Proverb</div>
+      <div class="philosophy-statement">
+        <p>Philanthropy is a declaration that the world as it is is not the world as it should be—and that we have the power to close that distance. But somewhere between the ask and the check, that clarity can get lost. My work is about finding it again: helping organizations ask from a place of belief rather than desperation, and helping donors give from a place of purpose rather than obligation.</p>
+        <span class="philosophy-attr">— Julie McNulty, Founder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="nonprofits">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2>Counsel for Every Side of the Table</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-panel">
+        <h3>For Mission-Driven Organizations</h3>
+
+        <div class="service-item">
+          <h4>Major Gift Architecture &amp; Action</h4>
+          <p>Full Belly Advisors helps you design a clear, actionable strategy for securing six- and seven-figure gifts—and walks alongside you as you implement it. Together, we'll build cultivation and solicitation roadmaps that are rooted in mission and calibrated to your organization's capacity and ambition—aligning the right opportunities with the right donors at the right time. From donor qualification through solicitation and stewardship, we provide steady, practical guidance and can partner directly in donor conversations to move transformational gifts across the finish line.</p>
+        </div>
+
+        <div class="service-item">
+          <h4>Narrative &amp; Case Development</h4>
+          <p>Full Belly Advisors helps you clarify the story that only your organization can tell—one that is true to mission, resonates with the moment, and engages both new and existing donors. We translate complex work into a clear philanthropic case and equip executives, board members, and frontline fundraisers to share it authentically and compellingly. We help nonprofits tell their story with clarity and confidence—balancing a steady, strategic perspective with the urgency that inspires donors to act, even in uncertain times.</p>
+        </div>
+
+        <div class="service-item">
+          <h4>Support for Development Leaders</h4>
+          <p>Development leaders are often asked to move mountains—meeting ever-increasing revenue goals without all the resources they need. At Full Belly Advisors, we serve as a trusted thought partner to CDOs and Development Directors, offering perspective, prioritization, and practical advice. Together, we assess capacity, clarify priorities, and build actionable roadmaps that align teams and drive revenue results, while ensuring that Development leaders are supported and resourced for the road ahead. We also bring leaders together with their peers, creating safe, collaborative spaces to share ideas, brainstorm solutions, and explore how to bring their most authentic, effective selves to the work.</p>
+        </div>
+      </div>
+
+      <div class="service-panel" id="philanthropists">
+        <h3>For Philanthropists</h3>
+
+        <div class="service-item">
+          <h4>Values-Based Philanthropy</h4>
+          <p>Full Belly Advisors helps donors move beyond transactional giving. We sit in complexity with donors—helping them clarify goals, ask better questions, weigh risks, and ultimately make gifts that bring them joy and align with their vision for a better world.</p>
+        </div>
+
+        <div class="service-item">
+          <h4>Impact Vetting &amp; Due Diligence</h4>
+          <p>We provide thorough, objective analysis of prospective grantees—examining mission, theory of change, financial health, and governance structures—so your philanthropy is informed, aligned with your values, and positioned for maximum impact.</p>
+        </div>
+
+        <div class="service-item">
+          <h4>Multi-Generational Philanthropy</h4>
+          <p>Multi-generational philanthropy requires thoughtfulness and balance in order to honor shared family values while leaving space for change. We facilitate meaningful conversations that build shared understanding around assets, impact, and long-term goals—honoring shared family values while creating space for future generations to shape their own legacy.</p>
+        </div>
+
+        <div class="service-item">
+          <h4>Strategic Grantmaking &amp; Operations</h4>
+          <p>From establishing funding priorities to creating grant cycles and evaluation frameworks, we design and manage clear grantmaking processes—freeing you to focus on relationships and long-term impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-label reveal">
+      <div class="section-label">About Julie</div>
+    </div>
+    <div class="about-content reveal">
+      <h2>Working at the Intersection of Vision and Impact</h2>
+      <p>
+        Founder Julie McNulty has spent nearly two decades raising funds for high-impact organizations across issue areas and at every scale—from community-based nonprofits to institutions raising more than $100 million annually.
+      </p>
+      <p>
+        She has worked extensively with high- and ultra-high-net-worth philanthropists, helping translate values and vision into tangible, measurable impact—for organizations and for the people whose dollars make the work possible.
+      </p>
+      <p>
+        Julie founded Full Belly Advisors to reach more organizations and donors at pivotal moments of growth and transition. She built the firm on the belief that neither a mission nor a donor's legacy can thrive in scarcity—and that world-changing philanthropy should feel confident, authentic, and joyful.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-left reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2>Begin the Conversation</h2>
+      <p>
+        Whether you're an organization at a pivotal moment of growth, or a donor clarifying your philanthropic vision, we'd love to connect.
+      </p>
+    </div>
+    <form class="contact-form reveal" action="https://formspree.io/f/mkopndwl" method="POST">
+      <div class="form-row">
+        <input type="text" name="first_name" placeholder="First Name" />
+        <input type="text" name="last_name" placeholder="Last Name" />
+      </div>
+      <input type="email" name="email" placeholder="Email Address" />
+      <select name="type">
+        <option value="" disabled selected>I am a...</option>
+        <option>Nonprofit Organization</option>
+        <option>Development Leader</option>
+        <option>Individual Philanthropist</option>
+        <option>Family / Foundation</option>
+      </select>
+      <textarea name="message" placeholder="Tell us a bit about where you are and what you're hoping to explore…"></textarea>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo-foot">Full Belly Advisors</div>
+    <div class="copy">&copy; 2026 Full Belly Advisors, LLC — Julie McNulty</div>
+  </footer>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = (scrollTop / scrollHeight) * 100;
+      document.getElementById('scrollBar').style.width = pct + '%';
+    });
+
+    // Nav style on scroll
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // Hamburger menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      nav.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close menu when a nav link is tapped
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 120);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
